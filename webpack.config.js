@@ -10,7 +10,11 @@ module.exports = {
         filename: 'bundle.js'
     },
     resolve: {
-        extensions: ['.js', '.jsx']
+        extensions: ['.js', '.jsx'],
+        alias: {
+            '@images': path.resolve(__dirname, 'src/images'),
+            '@styles': path.resolve(__dirname, 'src/styles'),
+        }
     },
     module: {
         rules: [
@@ -22,7 +26,7 @@ module.exports = {
                 }
             },
             {
-                test: /\.s[ac]ss$/i,
+                test: /\.(css|scss)$/,
                 use: [
                     'style-loader',
                     'css-loader',
