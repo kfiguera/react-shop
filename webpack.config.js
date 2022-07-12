@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+/** @type {import('webpack').Configuration} */
 module.exports = {
     entry: './src/index.js',
     output: {
@@ -39,6 +40,11 @@ module.exports = {
             template: './public/index.html',
             filename: './index.html'
         })
-    ]
+    ],
+    devServer: {
+        historyApiFallback: true,
+        port: 8080,
+        open: true
+    }
 }
 
