@@ -6,6 +6,7 @@ import Home from "../pages/Home";
 import Login from "../containers/Login";
 import RecoveryPassword from "../containers/RecoveryPassword";
 import NotFound from "../pages/NotFound";
+import Header from "../components/Header";
 
 const App = () => {
     return (
