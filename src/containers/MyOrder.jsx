@@ -6,7 +6,13 @@ import AppContext from "@context/AppContext";
 
 const MyOrder = () => {
     const {state} = useContext(AppContext);
-
+    const sumTotal = () => {
+        const reducer = (accumulator, currentValue) => {
+            return accumulator + currentValue.price;
+        };
+        const sum = state.cart.reduce(reducer,0);
+        return sum;
+    }
     return (
         <aside className="MyOrder">
             <div className="title-container">
@@ -22,7 +28,7 @@ const MyOrder = () => {
                     <p>
                         <span>Total</span>
                     </p>
-                    <p>$560.00</p>
+                    <p>${sumTotal()}</p>
                 </div>
                 <button className="primary-button">
                     Checkout
