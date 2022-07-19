@@ -3,6 +3,7 @@ import '@styles/ProductItem.scss';
 import btAddToCart from '@icons/bt_add_to_cart.svg';
 
 const ProductItem = ({product}) => {
+    const {id, title, price, images} = product;
 	const [cart, setCart] = useState([]);
 	const addToCart = () => {
 		setCart([]);
@@ -10,12 +11,12 @@ const ProductItem = ({product}) => {
     return (
         <div className="ProductItem">
             <img
-                src={product.images[0]}
-                alt=""/>
+                src={images[0]}
+                alt={title}/>
             <div className="product-info">
                 <div>
-                    <p>${product.price}</p>
-                    <p>{product.title}</p>
+                    <p>${price}</p>
+                    <p>{title}</p>
                 </div>
                 <figure onClick={addToCart}>
                     <img src={btAddToCart} alt=""/>
